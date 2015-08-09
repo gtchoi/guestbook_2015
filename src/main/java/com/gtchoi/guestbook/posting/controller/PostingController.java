@@ -17,10 +17,13 @@ public class PostingController {
 	@Autowired
 	PostingService postingService;
 	
-	@RequestMapping(method= RequestMethod.GET)
+	@RequestMapping(value="/", method= RequestMethod.GET)
 	public String getPostings(Model model) {
 		List<Posting> postings = postingService.getPostings();
-		model.addAttribute("posting", postings.get(0));
+		model.addAttribute("postings", postings);
+		for(Posting posting : postings) {
+			System.out.println("abcd" + posting.getCreatedYmdt());
+		}
 		return "postings";
 	}
 	
