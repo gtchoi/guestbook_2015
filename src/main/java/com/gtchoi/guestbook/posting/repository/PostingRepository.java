@@ -13,4 +13,6 @@ public interface PostingRepository {
 	
 //	@Select("SELECT * FROM postings")
 	public List<Posting> selectPostings();
+
+	public int insertPosting(Posting posting);
 }

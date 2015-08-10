@@ -7,5 +7,10 @@
 	<select id="selectPostings" resultType="com.gtchoi.guestbook.posting.model.Posting">
 		select * from postings
 	</select>
+	
+	<insert id="insertPosting" parameterType="posting">
+		INSERT INTO postings (ID,NAME,AGE,ADDRESS,SALARY)
+		VALUES (2, 'Khilan', 25, 'Delhi', 1500.00 );
+	</insert>
 
 </mapper>
