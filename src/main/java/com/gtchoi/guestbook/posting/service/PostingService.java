@@ -14,26 +14,35 @@ public class PostingService {
 	@Autowired
 	@Qualifier("postingRepository")
 	PostingRepository postingRepository;
-	
+
 	/**
 	 * 글을 삽입한다.
+	 * 
 	 * @return
 	 */
-//	public int addPosting(Posting posting) {
-//		return postingRepository.insertPosting(posting);
-//	}
+	// public int addPosting(Posting posting) {
+	// return postingRepository.insertPosting(posting);
+	// }
 	/**
 	 * 글을 수정한다.
-	 * @param posting: 수정할 댓글
+	 * 
+	 * @param posting
+	 *            : 수정할 댓글
 	 */
-//	public int modifyPosting(Posting posting) {
-//		return postingRepository.updatePosting(posting);
-//	}
+	// public int modifyPosting(Posting posting) {
+	// return postingRepository.updatePosting(posting);
+	// }
 	/**
 	 * 모든 글을 가져온다.
+	 * 
 	 * @return
 	 */
 	public List<Posting> getPostings() {
 		return postingRepository.selectPostings();
+	}
+
+	public void addPosting(Posting posting) {
+		postingRepository.insertPosting(posting);
+
 	}
 }

@@ -2,10 +2,18 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gtchoi.guestbook.posting.repository.PostingRepository">
-	
+
 
 	<select id="selectPostings" resultType="com.gtchoi.guestbook.posting.model.Posting">
 		select * from postings
 	</select>
+
+	<insert id="insertPosting" parameterType="com.gtchoi.guestbook.posting.model.Posting">
+		INSERT INTO postings
+		(content, nickname, created_ymdt, modified_ymdt, ip_address)
+		VALUES
+		(#{content}, #{nickname}, NOW(), NOW(),
+		#{ipAddress} );
+	</insert>
 
 </mapper>
