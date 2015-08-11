@@ -9,10 +9,10 @@ import com.gtchoi.guestbook.posting.model.Posting;
 
 @Repository
 public interface PostingRepository {
-	
-	
-//	@Select("SELECT * FROM postings")
+
+	// @Select("SELECT * FROM postings")
 	public List<Posting> selectPostings();
 
 	public int insertPosting(Posting posting);
+
 }

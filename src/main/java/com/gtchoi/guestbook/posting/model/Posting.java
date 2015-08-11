@@ -8,38 +8,57 @@ import org.apache.ibatis.type.Alias;
 public class Posting {
 	private int postingNo;
 	private String content;
-	private String eMail;
+	private String nickname;
 	private Date createdYmdt;
 	private Date modifiedYmdt;
-	
+	private String ipAddress;
+
 	public int getPostingNo() {
 		return postingNo;
 	}
+
 	public void setPostingNo(int postingNo) {
 		this.postingNo = postingNo;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String geteMail() {
-		return eMail;
+
+	public String getNickname() {
+		return nickname;
 	}
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
+
 	public Date getCreatedYmdt() {
 		return createdYmdt;
 	}
+
 	public void setCreatedYmdt(Date createdYmdt) {
 		this.createdYmdt = createdYmdt;
 	}
+
 	public Date getModifiedYmdt() {
 		return modifiedYmdt;
 	}
+
 	public void setModifiedYmdt(Date modifiedYmdt) {
 		this.modifiedYmdt = modifiedYmdt;
 	}
+
+	public String getIpAddress() {
+		return ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+
 }

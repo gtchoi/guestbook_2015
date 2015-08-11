@@ -2,6 +2,9 @@ package com.gtchoi.guestbook.posting.controller;
 
 import java.util.List;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,18 +20,23 @@ import com.gtchoi.guestbook.posting.service.PostingService;
 public class PostingController {
 	@Autowired
 	PostingService postingService;
-	
-	@RequestMapping(value="/", method= RequestMethod.GET)
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getPostings(Model model) {
 		List<Posting> postings = postingService.getPostings();
 		model.addAttribute("postings", postings);
 		return "postings";
 	}
-	
-	@RequestMapping(value="/", method= RequestMethod.POST)
-	public String createPosting(@ModelAttribute Posting posting) {
+
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public String createPosting(@ModelAttribute Posting posting,
+			HttpServletRequest reqeust, Model model) {
+		posting.setIpAddress(reqeust.getRemoteAddr());
+		posting.setNickname("섹시멸치");
 		postingService.addPosting(posting);
-		return "";
+		List<Posting> postings = postingService.getPostings();
+		model.addAttribute("postings", postings);
+		return "postings";
 	}
-	
+
 }
