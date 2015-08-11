@@ -15,7 +15,18 @@
 			<form action="/guestbook/postings/create" method="post" id="postingForm"
 				style="display: block">
 				<div style="margin: 0; padding: 0; display: inline"></div>
-
+				
+				<div id="nickname-title">
+					<div class="profile-title-text">
+						<span class="text-headline" dir="ltr"><span dir="ltr">당신의 이름은?</span></span>
+					</div>
+				</div>
+				<div id="postLoaderTerritory1">
+					<textarea class="composeQuestion-form growable-textarea" id="profile-input" name="nickname" style="overflow: hidden; line-height: 18px; height: 36px;"></textarea>
+				</div>
+				
+				<p></p>
+				
 				<div id="profile-title">
 					<div class="profile-title-text">
 						<span class="text-headline" dir="ltr"><span dir="ltr">질문을

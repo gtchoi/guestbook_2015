@@ -32,7 +32,6 @@ public class PostingController {
 	public String createPosting(@ModelAttribute Posting posting,
 			HttpServletRequest reqeust, Model model) {
 		posting.setIpAddress(reqeust.getRemoteAddr());
-		posting.setNickname("섹시멸치");
 		postingService.addPosting(posting);
 		List<Posting> postings = postingService.getPostings();
 		model.addAttribute("postings", postings);
