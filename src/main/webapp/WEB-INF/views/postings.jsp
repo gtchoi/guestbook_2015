@@ -12,7 +12,7 @@
 
 	<div class="container-profile">
 		<div class="container-profile">
-			<form action="/guestbook/postings/create" method="post" id="postingForm"
+			<form action="/postings/create" method="post" id="postingForm"
 				style="display: block">
 				<div style="margin: 0; padding: 0; display: inline"></div>
 				

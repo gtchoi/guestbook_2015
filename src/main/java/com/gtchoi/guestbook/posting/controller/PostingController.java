@@ -21,7 +21,7 @@ public class PostingController {
 	@Autowired
 	PostingService postingService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String getPostings(Model model) {
 		List<Posting> postings = postingService.getPostings();
 		model.addAttribute("postings", postings);
